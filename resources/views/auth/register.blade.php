@@ -41,15 +41,15 @@
                             <label for="formacao" class="col-md-4 col-form-label text-md-right">Formação</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" name="formacao" id="formacao">
-                                    <option value="ensino_medio">Ensino Médio</option>
-                                    <option value="ensino_profissionalizante">Ensino Profissionalizante</option>
-                                    <option value="superior_completo">Ensino Superior Completo</option>
-                                    <option value="superior_incompleto">Ensino Superior Incompleto</option>
-                                    <option value="especializacao">Especialização</option>
-                                    <option value="mestrado">Mestrado</option>
-                                    <option value="doutorado">Doutorado</option>
-                                  </select>
+                                {!! Form::select('formacao', [
+                                    'ensino_medio' => 'Ensino Médio',
+                                    'ensino_profissionalizante' => 'Ensino Profissionalizante',
+                                    'superior_completo' => 'Ensino Superior Completo',
+                                    'superior_incompleto' => 'Ensino Superior Incompleto',
+                                    'especializacao' => 'Especialização',
+                                    'mestrado' => 'Mestrado',
+                                    'doutorado' => 'Doutorado'
+                                ], null, ['class' => 'form-control']) !!}
 
                                 @if ($errors->has('formacao'))
                                     <span class="invalid-feedback" role="alert">
