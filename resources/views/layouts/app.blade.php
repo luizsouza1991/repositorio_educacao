@@ -50,7 +50,7 @@
                             @endif
                         @else
                             <li class="nav-item text-left">
-                                <a href="#" class="nav-link">Teste de opção</a>
+                                <a href="{{ route('recurso.create') }}" class="nav-link">Publicar Recurso</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>

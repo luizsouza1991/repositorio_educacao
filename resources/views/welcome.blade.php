@@ -61,6 +61,10 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
+
+            body {
+                background:url({{ asset('image/fundo.png') }});
+            }
         </style>
     </head>
     <body>

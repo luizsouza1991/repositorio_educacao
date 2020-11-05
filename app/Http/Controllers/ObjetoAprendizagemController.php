@@ -22,4 +22,9 @@ class ObjetoAprendizagemController extends Controller
 
         return redirect()->route('home');
     }
+
+    public function create()
+    {
+        return view('objetos-aprendizagem.form');
+    }
 }
