@@ -48,9 +48,9 @@
                         <div class="form-group row justify-content-md-center">
                             <div class="col-md-8">
                                 {!! Form::label('autor', 'Autor') !!}<br>
-                                {!! Form::checkbox('autor', 'self') !!} Eu sou o(a) autor(a) deste recurso<br>
-                                {!! Form::checkbox('autor', 'other') !!} Outro
-                                {!! Form::text('autores', null, ['class' => 'form-control', 'placeholder' => 'Informe os autores']) !!}
+                                {!! Form::checkbox('autor', 'self', null, ['id' => 'self']) !!} Eu sou o(a) autor(a) deste recurso<br>
+                                {!! Form::checkbox('autor', 'other', null, ['id' => 'other']) !!} Outro
+                                {!! Form::text('autores', null, ['id' => 'autores', 'class' => 'form-control', 'placeholder' => 'Informe os autores']) !!}
                             </div>
                         </div>
                         
@@ -84,3 +84,17 @@
     </div>
 </div>
 @endsection
+@push('scripts')
+    <script>
+        window.onload = function () {
+            document.getElementById('autores').style.display = "none";
+            document.getElementById('other').onclick = function () {
+                if (this.checked) {
+                    document.getElementById('autores').style.display = "block";
+                } else {
+                    document.getElementById('autores').style.display = "none";
+                }
+            }
+        }
+    </script>
+@endpush
