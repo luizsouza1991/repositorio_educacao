@@ -75,7 +75,7 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="#" data-toggle="modal" data-target="#modal-login">Login</a>
 
                         @if (Route::has('register'))
                             <a href="#" data-toggle="modal" data-target="#modal-cadastro">Register</a>
@@ -100,6 +100,7 @@
                 </div>
             </div>
             @include('auth.register')
+            @include('auth.login')
         </div>
     </body>
 </html>
