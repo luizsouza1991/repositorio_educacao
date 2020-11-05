@@ -23,6 +23,7 @@ class CreateUsersTable extends Migration
             $table->string('formacao');
             $table->string('curso_formacao');
             $table->string('instituicao');
+            $table->string('perfil');
             $table->rememberToken();
             $table->timestamps();
         });
