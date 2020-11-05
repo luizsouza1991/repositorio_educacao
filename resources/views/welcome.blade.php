@@ -8,7 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link rel="stylesheet" href="{{ asset('css/app.css')}}">
+        <script src="{{ asset('js/app.js') }}"></script>
         <!-- Styles -->
         <style>
             html, body {
@@ -62,9 +63,9 @@
                 margin-bottom: 30px;
             }
 
-            body {
+            /* body {
                 background:url({{ asset('image/fundo.png') }});
-            }
+            } */
         </style>
     </head>
     <body>
@@ -77,7 +78,7 @@
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="#" data-toggle="modal" data-target="#modal-cadastro">Register</a>
                         @endif
                     @endauth
                 </div>
@@ -98,6 +99,7 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
+            @include('auth.register')
         </div>
     </body>
 </html>
