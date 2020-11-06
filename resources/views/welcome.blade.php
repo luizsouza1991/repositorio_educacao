@@ -62,8 +62,6 @@
             .m-b-md {
                 margin-bottom: 30px;
             }
-
-<<<<<<< HEAD
             body {
                 position: absolute;
                 left:0;
@@ -72,11 +70,6 @@
                 background:url({{ asset('image/fundo1.png') }});
                 background-size: cover;
             }
-=======
-            /* body {
-                background:url({{ asset('image/fundo.png') }});
-            } */
->>>>>>> ef3657a681d47d061276aef0b51ee18476a18df1
         </style>
     </head>
     <body>
