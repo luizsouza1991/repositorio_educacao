@@ -6,17 +6,20 @@ use App\ObjetoAprendizagem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Storage;
 
 class ObjetoAprendizagemController extends Controller
 {
     public function store(Request $request)
     {
         $data = $request->all();
-        $user = Auth::user();
+        if ($request->autor == 'self' && !$request->autores) {
+            $data['autores'] = Auth::user()->name;
+        }
+        
+        $data['arquivo'] = $data['arquivo']->store('files');
 
-        $data['user_id'] = $user->id;
-
-        $objeto = ObjetoAprendizagem::create($data);
+        ObjetoAprendizagem::create(Arr::except($data, ['autor']));
 
         session()->flash('msg', 'Cadastro realizado com sucesso');
 

@@ -19,4 +19,7 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/recurso/create', 'ObjetoAprendizagemController@create')->name('recurso.create');
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/recurso/create', 'ObjetoAprendizagemController@create')->name('recurso.create');
+    Route::post('/recurso/store', 'ObjetoAprendizagemController@store')->name('recurso.store');
+});

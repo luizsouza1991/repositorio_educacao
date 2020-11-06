@@ -8,7 +8,7 @@
                 <div class="card-header">Aqui entra algum texto</div>
 
                 <div class="card-body">
-                    {!! Form::open(['method' => 'POST', 'route' => ['register']]) !!}
+                    {!! Form::open(['method' => 'POST', 'route' => ['recurso.store'], 'enctype' => 'multipart/form-data']) !!}
                         @csrf
                         <div class="form-group row justify-content-md-center">
                             <div class="col-md-8">
@@ -56,8 +56,8 @@
                         
                         <div class="form-group row justify-content-md-center">
                             <div class="col-md-8">
-                                {!! Form::label('idiomas', 'Idiomas') !!}
-                                {!! Form::select('idiomas', [
+                                {!! Form::label('idioma', 'Idiomas') !!}
+                                {!! Form::select('idioma', [
                                     'portugues' => 'Português',
                                     'ingles' => 'Inglês',
                                     'espanhol' => 'Espanhol'
@@ -67,8 +67,22 @@
 
                         <div class="form-group row justify-content-md-center">
                             <div class="col-md-8">
-                                {!! Form::label('palavra_chave', 'Palavras-chave') !!}
-                                {!! Form::text('palavra_chave', null, ['class' => 'form-control']) !!}
+                                {!! Form::label('palavras_chave', 'Palavras-chave') !!}
+                                {!! Form::text('palavras_chave', null, ['class' => 'form-control']) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row justify-content-md-center">
+                            <div class="col-md-8">
+                                {!! Form::label('url', 'URL') !!}
+                                {!! Form::text('url', null, ['class' => 'form-control']) !!}
+                            </div>
+                        </div>
+
+                        <div class="form-group row justify-content-md-center">
+                            <div class="col-md-8">
+                                {!! Form::label('arquivo', 'Arquivo') !!}
+                                {!! Form::input('file', 'arquivo') !!}
                             </div>
                         </div>
                         

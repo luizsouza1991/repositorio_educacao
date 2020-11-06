@@ -21,12 +21,10 @@ class CreateObjetosAprendizagemTable extends Migration
             $table->text('descricao');
             $table->string('area_computacao');
             $table->string('autores');
-            $table->string('idiomas');
-            $table->string('uri');
+            $table->string('idioma');
+            $table->string('url');
             $table->string('palavras_chave');
-            $table->string('status');
-            $table->unsignedInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+            $table->string('arquivo');
             $table->timestamps();
         });
     }
