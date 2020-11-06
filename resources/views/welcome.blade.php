@@ -8,7 +8,8 @@
 
         <!-- Fonts -->
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
+        <link rel="stylesheet" href="{{ asset('css/app.css')}}">
+        <script src="{{ asset('js/app.js') }}"></script>
         <!-- Styles -->
         <style>
             html, body {
@@ -62,6 +63,7 @@
                 margin-bottom: 30px;
             }
 
+<<<<<<< HEAD
             body {
                 position: absolute;
                 left:0;
@@ -70,6 +72,11 @@
                 background:url({{ asset('image/fundo1.png') }});
                 background-size: cover;
             }
+=======
+            /* body {
+                background:url({{ asset('image/fundo.png') }});
+            } */
+>>>>>>> ef3657a681d47d061276aef0b51ee18476a18df1
         </style>
     </head>
     <body>
@@ -79,10 +86,10 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="{{ route('login') }}">Login</a>
+                        <a href="#" data-toggle="modal" data-target="#modal-login">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="#" data-toggle="modal" data-target="#modal-cadastro">Register</a>
                         @endif
                     @endauth
                 </div>
@@ -103,6 +110,8 @@
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
             </div>
+            @include('auth.register')
+            @include('auth.login')
         </div>
     </body>
 </html>
