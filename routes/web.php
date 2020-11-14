@@ -24,3 +24,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('/recurso/store', 'ObjetoAprendizagemController@store')->name('recurso.store');
     Route::get('/recurso/{id}', 'ObjetoAprendizagemController@show')->name('recurso.update');
 });
+Route::post('pesquisa', 'ObjetoAprendizagemController@pesquisar');
+Route::get('objeto-aprendizagem/{id}', 'ObjetoAprendizagemController@mostrar');

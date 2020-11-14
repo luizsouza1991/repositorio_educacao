@@ -3,6 +3,7 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="csrf-token" content="{{ csrf_token() }}">
 
         <title>Laravel</title>
 
@@ -88,19 +89,10 @@
                 </div>
             @endif
 
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+            <div>
+                <div class="row">
+                    <input type="text" name="pesquisa" placeholder="Informe o título do objeto" id="pesquisa" class="form-control" onkeyup="buscarObjeto()">
+                    <div id="objetos" style="width: 100%"></div>
                 </div>
             </div>
             @include('auth.register')
@@ -108,3 +100,39 @@
         </div>
     </body>
 </html>
+<script src="{{ asset('js/axios.js') }}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+    function buscarObjeto()
+    {
+        let valor = document.getElementById('pesquisa').value;
+        if (valor != '') {
+            axios.post('/pesquisa', {
+                pesquisa: valor
+            })
+            .then(response => {
+                let {data} = response;
+                $('#objetos').empty()
+                if (data.dados.length > 0) {
+                    let dados_objetos = '';                
+                    dados_objetos += '<table class="table table-hover" style="background: #ffffff">';
+                    dados_objetos += '<tbody>';
+                        
+                        $.each(data.dados, function (key, objeto) {
+                            dados_objetos += '<tr>'
+                            dados_objetos += '<th class="table-search" scope="row" ><a href="/objeto-aprendizagem/'+ objeto.id +'">' + objeto.titulo + '</a></th>';
+                        });
+
+                    dados_objetos += '</tbody>';  
+                    dados_objetos += '</table>';
+
+                    $("#objetos").append(dados_objetos);
+                } else {
+                    $("#objetos").empty()
+                }
+            })
+        } else {
+            $('#objetos').empty()
+        }       
+    }
+</script>

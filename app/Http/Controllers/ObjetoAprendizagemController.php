@@ -38,4 +38,18 @@ class ObjetoAprendizagemController extends Controller
             'objeto' => $objeto
         ]);
     }
+
+    public function pesquisar(Request $request)
+    {
+        $pesquisa = ObjetoAprendizagem::where('titulo', 'like', "%$request->pesquisa%")->get();
+        return response()->json(['dados' => $pesquisa], 200);
+    }
+
+    public function mostrar($id)
+    {
+        $objeto = ObjetoAprendizagem::find($id);
+        return view('view-objeto-aprendizagem', [
+            'objeto' => $objeto
+        ]);
+    }
 }
