@@ -30,4 +30,12 @@ class ObjetoAprendizagemController extends Controller
     {
         return view('objetos-aprendizagem.form');
     }
+
+    public function show($id)
+    {
+        $objeto = ObjetoAprendizagem::find($id);
+        return view('objetos-aprendizagem.show', [
+            'objeto' => $objeto
+        ]);
+    }
 }

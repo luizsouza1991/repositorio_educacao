@@ -67,7 +67,7 @@
                 left:0;
                 width: 100%;
                 height:100%;
-                background:url({{ asset('image/fundo1.png') }});
+                background:url("{{ asset('image/fundo1.png') }}");
                 background-size: cover;
             }
         </style>
