@@ -61,14 +61,14 @@
                     </div>
 
                     <div class="form-group row">
-                        {!! Form::label('password', 'Senha', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
+                        {!! Form::label('password', '', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
                         <div class="col-md-6">
                             {!! Form::password('password',['class' => 'form-control']) !!}
                         </div>
                     </div>
 
                     <div class="form-group row">
-                        {!! Form::label('password_confirmation', 'Confirme a Senha', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
+                        {!! Form::label('password_confirmation', 'Confirme a ', ['class' => 'col-md-4 col-form-label text-md-right']) !!}
                         <div class="col-md-6">
                             {!! Form::password('password_confirmation',['class' => 'form-control']) !!}
                         </div>
