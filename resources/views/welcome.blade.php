@@ -74,7 +74,7 @@
         </style>
     </head>
     <body>
-        <div class="flex-center position-ref full-height">
+        <div class="flex-center full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
@@ -88,11 +88,12 @@
                     @endauth
                 </div>
             @endif
-
-            <div>
+       
+            <div class="container">
+                <br><br><br><br><br><br><br><br><br><br><br><br>
                 <div class="row">
-                    <input type="text" name="pesquisa" placeholder="Informe o título do objeto" id="pesquisa" class="form-control" onkeyup="buscarObjeto()">
-                    <div id="objetos" style="width: 100%"></div>
+                    <input type="text" style="width: 60%; display:block;margin:auto" name="pesquisa" placeholder="Informe o título do objeto" id="pesquisa" class="form-control" onkeyup="buscarObjeto()">
+                    <div id="objetos" style="width: 60%;display:block;margin:auto"></div>
                 </div>
             </div>
             @include('auth.register')
