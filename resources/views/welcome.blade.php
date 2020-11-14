@@ -80,10 +80,10 @@
                     @auth
                         <a href="{{ url('/home') }}">Home</a>
                     @else
-                        <a href="#" data-toggle="modal" data-target="#modal-login">Login</a>
+                        <a href="#" data-toggle="modal" data-target="#modal-login">Entrar</a>
 
                         @if (Route::has('register'))
-                            <a href="#" data-toggle="modal" data-target="#modal-cadastro">Register</a>
+                            <a href="#" data-toggle="modal" data-target="#modal-cadastro">Cadastre-se</a>
                         @endif
                     @endauth
                 </div>

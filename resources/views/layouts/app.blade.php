@@ -41,11 +41,11 @@
                         <!-- Authentication Links -->
                         @guest
                             <li class="nav-item">
-                                <a class="nav-link" href="#" data-toggle="modal" data-target="#modal-login">{{ __('Login') }}</a>
+                                <a class="nav-link" href="#" data-toggle="modal" data-target="#modal-login">Entrar</a>
                             </li>
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="#" data-toggle="modal" data-target="#modal-cadastro">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="#" data-toggle="modal" data-target="#modal-cadastro">Cadastre-se</a>
                                 </li>
                             @endif
                         @else
